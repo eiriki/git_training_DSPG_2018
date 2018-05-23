@@ -31,4 +31,4 @@ print(v)
 
 #Intro to git branching 
 use 'git branch BRANCH_NAME' or 'git checkout -b BRANCH_NAME' to create a branch. 
-use '
+git log --oneline 
