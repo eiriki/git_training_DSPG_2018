@@ -40,3 +40,5 @@ git log --oneline
 -you can edit the same file at the same time, 
  and nothing terrible will happen if the edit occurs in  
  sdifferent locations
+
+#Here is a conflict
