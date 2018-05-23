@@ -32,3 +32,9 @@ print(v)
 #Intro to git branching 
 use 'git branch BRANCH_NAME' or 'git checkout -b BRANCH_NAME' to create a branch. 
 git log --oneline 
+
+# Conflicts 
+
+-you can edit the same file at the same time, 
+ and nothing terrible will happen if the edit occurs in  
+ sdifferent locations
