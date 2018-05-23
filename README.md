@@ -28,3 +28,7 @@ thing look prettier
 v < - c(1,2,3,4)
 print(v)
 ```
+
+#Intro to git branching 
+use 'git branch BRANCH_NAME' or 'git checkout -b BRANCH_NAME' to create a branch. 
+git log --oneline 
