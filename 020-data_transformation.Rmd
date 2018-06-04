@@ -50,5 +50,97 @@ filter(flights, arr_delay <= 120, dep_delay <=12)
 ```
 my default filter will also drop missing values 
 
+#Arrange 
+```{r}
+arrange(flights, year, month, day)
+```
+
+```{r}
+arrange(flights, year, month, desc(day))
+```
+
+```{r}
+arrange(flights, year, desc(month), day)
+```
+
+#Select 
+```{r}
+select(flights, year, month, day)
+```
+
+```{r}
+select(flights, year:day,arr_delay)
+```
+
+```{r}
+select(flights, -year)
+```
+
+```{r}
+select(flights, -(year:day))
+```
+
+```
+starts_with 
+ends_with 
+contains 
+matches 
+num_range #x1 x2 x3 
+```
+
+```{r}
+rename(flights, "tail_num" = tailnum, 'y' = year)
+```
+```{r}
+select(flights, time_hour, air_time, everything())
+```
+
+```{r}
+mean(c(301,293,279,280,255,373,285,264,291,319,290,287))
+```
+
+#Mutate 
+```{r}
+flights_sml <- select(flights,year:day,ends_with('delay'),distance,air_time)
+```
+
+```{r}
+mutate(flights_sml, gain = arr_delay - dep_delay,
+       speed= distance /air_time * 60,
+       hours = air_time /60,
+       gain_per_hour = gain / hours)
+
+```
+
+#Summarize 
+```{r}
+summarize(flights, delay = mean(dep_delay, na.rm = TRUE))
+```
+
+```{r}
+by_Day <- group_by(flights,
+                   year, month, day)
+```
+
+```{r}
+summarize(by_Day, delay = mean(dep_delay, na.rm = TRUE))
+```
+
+```{r}
+by_Day <- group_by(flights,year,month,day) %>%
+  summarize(delay = mean(dep_delay, na.rm = TRUE),
+            delay_std = sd(dep_delay, na.rm = TRUE))
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
