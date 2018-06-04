@@ -1,0 +1,54 @@
+---
+title: "Data Transformation"
+author: "eirik iversen"
+date: "June 4, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dplyr)
+library(nycflights13)
+```
+
+```{r}
+flights
+```
+#Filter 
+```{r}
+filter(flights, month ==1)
+```
+
+```{r}
+jan1 <-filter(flights, month == 1,day == 1)
+```
+
+## comparisons 
+```
+> >= < <= != ==
+```
+
+```{r}
+near(sqrt(2)^2,2)
+```
+
+```{r}
+filter(flights, month == 11 | month == 12)
+```
+
+```{r}
+filter(flights, month %in% c(11, 12))
+```
+
+```{r}
+filter(flights, arr_delay <= 120, dep_delay <=12)
+```
+my default filter will also drop missing values 
+
+
+
