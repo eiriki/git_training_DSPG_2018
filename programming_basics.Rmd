@@ -1,0 +1,58 @@
+---
+title: "programming_basics"
+author: "eirik iversen"
+date: "June 7, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#lists can store multiple data types 
+```{r}
+mylist <- list(1,2,3,T,F,'letters')
+mylist
+```
+
+#double bracks to get elements in list 
+```{r}
+mylist[[3]]
+mylist[3]
+```
+
+```{r}
+my_named <- c('a' = 1, 'b' = 2, 'c' = 3)
+my_named[3]
+my_named['b']
+```
+
+```{r}
+unnamed <- c(1:10)
+my_labels <- letters[1:10]
+names(unnamed) <- my_labels
+unnamed
+```
+
+#Vectorization 
+```{r}
+my_vec <- c(1,2,3,4,5,6)
+my_vec * 2
+```
+
+$\sum_{i=0}^n\dfrac{(x_i - \bar{x})^2}{n}$
+```{r}
+dim(mtcars)
+length(my_vec)
+n_1 <- length(my_vec) - 1
+x_bar <- mean(my_vec)
+
+sum(((my_vec - x_bar)^2)/n_1)
+```
+
+
+
+
+
